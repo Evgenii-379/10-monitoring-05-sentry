@@ -54,6 +54,30 @@ Free Cloud account имеет ограничения:
 
 # **Решение**
 
+- Установил сайт Sentry на серврере YC скачав репозиторий по ссылке:
+ 
+[self-hosted](https://github.com/getsentry/self-hosted)
+
+-Внёс в файл sentry.yml параметры:
+
+```
+###############
+# Mail Server #
+###############
+
+mail.backend: 'smtp'
+mail.host: 'smtp.mail.ru'                   
+mail.port: 465                           
+mail.username: 'Evgeniy_0307@mail.ru'     
+mail.password: '6AD*************qnqJU' 
+mail.use-ssl: true                    
+mail.from: 'Evgeniy_0307@mail.ru'
+
+```
+- В файл sentry.conf.py добавил: 
+
+CSRF_TRUSTED_ORIGINS = ["https://sentry.example.com", "http://10.100.10.10", "http://127.0.0.1:9000", "http://89.169.170.190:9000"]
+
 1.
 
 - ![scrin](https://github.com/Evgenii-379/10-monitoring-05-sentry/blob/main/Снимок%20экрана%202025-02-19%20194517.png)
